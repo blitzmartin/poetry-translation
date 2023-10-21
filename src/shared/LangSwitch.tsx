@@ -32,18 +32,21 @@ export const LanguageSwitch = () => {
         value={selectedLanguage}
         onValueChange={(value) => handleLanguageChange(value)}
       >
-        <SelectTrigger className="w-[180px]">
-          <SelectValue placeholder="Lang" />
+        <SelectTrigger>
+          <SelectValue />
         </SelectTrigger>
         <SelectContent>
           {languageOptions.map((lang) => (
             <SelectItem key={lang.value} value={lang.value}>
-              {lang.label}
+              <div className="flex items-center justify-between gap-2">
+                <div>{lang.label}</div>
+                <div>{lang.flag}</div>
+              </div>
             </SelectItem>
           ))}
         </SelectContent>
       </Select>
-
+      {/*
       <label htmlFor="language-select">Select Language: </label>
       <select
         className="w-24"
@@ -59,7 +62,7 @@ export const LanguageSwitch = () => {
             </div>
           </option>
         ))}
-      </select>
+      </select> */}
     </div>
   )
 }

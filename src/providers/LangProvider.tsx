@@ -5,13 +5,9 @@ type LangContextType = {
   changeLanguage: (language: string) => void
 }
 
-const LangContext = createContext<LangContextType | undefined>(undefined)
+const LangContext = createContext<LangContextType | null>(null)
 
-type LangProviderProps = {
-  children: ReactNode
-}
-
-export const LangProvider = ({ children }: LangProviderProps) => {
+export const LangProvider = ({ children }: { children: ReactNode }) => {
   const [selectedLanguage, setSelectedLanguage] = useState('en')
 
   const changeLanguage = (language: string) => {
@@ -27,7 +23,7 @@ export const LangProvider = ({ children }: LangProviderProps) => {
 
 export const useLang = () => {
   const context = useContext(LangContext)
-  if (context === undefined) {
+  if (context === null) {
     throw new Error('useLang must be used within a LangProvider')
   }
   return context

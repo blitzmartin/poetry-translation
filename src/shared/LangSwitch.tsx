@@ -1,6 +1,13 @@
 import { useLang } from '@/providers/LangProvider'
 import { De, Es, Fr, Gb, It } from 'react-flags-select'
 import { useTranslation } from 'react-i18next'
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue
+} from '.'
 
 export const LanguageSwitch = () => {
   const { i18n } = useTranslation()
@@ -21,6 +28,22 @@ export const LanguageSwitch = () => {
 
   return (
     <div>
+      <Select
+        value={selectedLanguage}
+        onValueChange={(value) => handleLanguageChange(value)}
+      >
+        <SelectTrigger className="w-[180px]">
+          <SelectValue placeholder="Lang" />
+        </SelectTrigger>
+        <SelectContent>
+          {languageOptions.map((lang) => (
+            <SelectItem key={lang.value} value={lang.value}>
+              {lang.label}
+            </SelectItem>
+          ))}
+        </SelectContent>
+      </Select>
+
       <label htmlFor="language-select">Select Language: </label>
       <select
         className="w-24"

@@ -5,7 +5,7 @@ export const Home = () => {
   const { t } = useTranslation()
   return (
     <PageContainer title={t('title')}>
-      <div className="flex flex-col gap-4 font-serif">
+      <div className="flex flex-col gap-4 font-serif italic">
         <div className="flex flex-col gap-1">
           <p>{t('par-1')}</p>
           <p>{t('par-2')}</p>

@@ -24,6 +24,7 @@ export const Home = () => {
           <p>{t('par-11')}</p>
           <p>{t('par-12')}</p>
         </div>
+        <div className="text-sm text-card">(Emily Dickinson)</div>
       </div>
     </PageContainer>
   )

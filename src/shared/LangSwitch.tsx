@@ -46,23 +46,6 @@ export const LanguageSwitch = () => {
           ))}
         </SelectContent>
       </Select>
-      {/*
-      <label htmlFor="language-select">Select Language: </label>
-      <select
-        className="w-24"
-        id="language-select"
-        value={selectedLanguage}
-        onChange={(e) => handleLanguageChange(e.target.value)}
-      >
-        {languageOptions.map((option) => (
-          <option key={option.value} value={option.value}>
-            <div className="flex gap-2">
-              <div>{option.label}</div>
-              <div>{option.flag}</div>
-            </div>
-          </option>
-        ))}
-      </select> */}
     </div>
   )
 }

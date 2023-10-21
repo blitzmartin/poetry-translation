@@ -5,6 +5,14 @@ export const LanguageSwitch = () => {
   const { i18n } = useTranslation()
   const { selectedLanguage, changeLanguage } = useLang()
 
+  const languageOptions = [
+    { value: 'en', label: 'ENG' },
+    { value: 'it', label: 'ITA' },
+    { value: 'es', label: 'ESP' },
+    { value: 'fr', label: 'FRA' },
+    { value: 'de', label: 'DEU' }
+  ]
+
   const handleLanguageChange = (newLanguage: string) => {
     i18n.changeLanguage(newLanguage)
     changeLanguage(newLanguage)
@@ -18,8 +26,11 @@ export const LanguageSwitch = () => {
         value={selectedLanguage}
         onChange={(e) => handleLanguageChange(e.target.value)}
       >
-        <option value="en">ENG</option>
-        <option value="it">ITA</option>
+        {languageOptions.map((option) => (
+          <option key={option.value} value={option.value}>
+            {option.label}
+          </option>
+        ))}
       </select>
     </div>
   )

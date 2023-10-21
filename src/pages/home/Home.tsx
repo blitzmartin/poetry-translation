@@ -1,6 +1,12 @@
 import { PageContainer } from '@/shared/PageContainer'
 
 export const Home = () => {
+  /*
+const { t } = useTranslation()
+const { t } = useTranslation('pages', {
+    keyPrefix: 'home'
+  })
+   */
   return (
     <PageContainer title="Home">
       <p>
